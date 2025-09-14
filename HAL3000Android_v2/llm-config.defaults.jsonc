@@ -1,0 +1,79 @@
+// Here is the default config that will be used if no override is provided.
+{
+  "default": {
+    "planner": {
+      "provider": "cerebras",
+      "model": "qwen-3-235b-a22b-instruct-2507" // To use OpenAI: "gpt-5-mini"
+    },
+    "orchestrator": {
+      "provider": "openai",
+      "model": "gpt-4o"
+    },
+    "contextor": {
+      "provider": "openai",
+      "model": "gpt-4o-mini",
+      "fallback": {
+        "provider": "openai", 
+        "model": "gpt-4o-mini"
+      }
+    },
+    "cortex": {
+      "provider": "openai",
+      "model": "gpt-4o-mini",
+      "fallback": {
+        "provider": "openai",
+        "model": "gpt-4o-mini"
+      }
+    },
+    "executor": {
+      "provider": "cerebras",
+      "model": "qwen-3-235b-a22b-instruct-2507" // To use OpenAI: "gpt-5-mini"
+    },
+    "utils": {
+      "hopper": {
+        // Needs at least a 256k context window.
+        "provider": "openai",
+        "model": "gpt-4.1"
+      },
+      "outputter": {
+        "provider": "cerebras",
+        "model": "qwen-3-235b-a22b-instruct-2507" // To use OpenAI: "gpt-5-mini"
+      }
+    }
+  },
+  // This is the config we recommend.
+  // To use it, copy it to llm.override.jsonc, following llm.override.template.jsonc.
+  "recommended": {
+    "planner": {
+      "provider": "openrouter",
+      "model": "meta-llama/llama-4-scout"
+    },
+    "orchestrator": {
+      "provider": "openrouter",
+      "model": "meta-llama/llama-4-scout"
+    },
+    "cortex": {
+      "provider": "google",
+      "model": "gemini-2.5-flash",
+      "fallback": {
+        "provider": "openai",
+        "model": "gpt-5"
+      }
+    },
+    "executor": {
+      "provider": "openai",
+      "model": "gpt-5-nano"
+    },
+    "utils": {
+      "hopper": {
+        // Needs at least a 256k context window.
+        "provider": "openai",
+        "model": "gpt-4.1"
+      },
+      "outputter": {
+        "provider": "openai",
+        "model": "gpt-5-nano"
+      }
+    }
+  }
+}

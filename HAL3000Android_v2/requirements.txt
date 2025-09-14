@@ -1,0 +1,24 @@
+# HAL3000Android Dependencies
+# Core mobile-use-main dependencies
+langchain
+langchain-core
+langchain-openai
+langchain-google-genai
+langchain-google-vertexai
+langgraph
+adbutils
+typer
+rich
+pydantic
+pydantic-settings
+jinja2
+pillow
+requests
+python-dotenv
+
+# HAL3000Android enhancements
+PyYAML
+
+# Development and testing
+pytest
+pytest-asyncio
